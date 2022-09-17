@@ -33,7 +33,7 @@ async def mines(ctx, round_id):
         elif b == 10:
             mines10 = "🟢"
         elif b == 11:
-            mine1 = "🟢"
+            mine11 = "🟢"
         elif b == 12:
             mines12 = "🟢"
         elif b == 13:
