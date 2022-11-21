@@ -15,34 +15,38 @@ async def freemines(ctx, round_id):
         mines1, mines2, mines3, mines4, mines5, mines6, mines7, mines8, mines9, mines10, mines11, mines12, mines13, mines14, mines15, mines16, mines17, mines18, mines19, mines20, mines21, mines22, mines23, mines24, mines25 = '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴'
         a = random.randint(1, 8)
         b = random.randint(9, 14)
-        if a == 1:
-            mines1 = "🟢"
-        elif a == 2:
-            mines2 = "🟢"
-        elif a == 3:
-            mines3 = "🟢"
-        elif a == 4:
-            mines4 = "🟢"
-        elif a == 5:
-            mines5 = "🟢"
-        elif a == 6:
-            mines6 = "🟢"
-        elif a == 7:
-            mines7 = "🟢"
-        elif a == 8:
-            mines8 = "🟢"
-        if b == 9:
-            mines9 = "🟢"
-        elif b == 10:
-            mines10 = "🟢"
-        elif b == 11:
-            mine11 = "🟢"
-        elif b == 12:
-            mines12 = "🟢"
-        elif b == 13:
-            mines13 = "🟢"
-        elif b == 14:
-            mines14 = "🟢"
+  
+#using a match statement makes code alot simpler :) ~ Contribution: TomScarcity#0001
+        match a: #tells the program you want to match the value of a
+                case 1: # if a = 1
+                        mines1 = "🟢"
+                case 2:
+                        mines2 = "🟢"
+                case 3:
+                         mines3 = "🟢"
+                case 4:
+                        mines4 = "🟢"
+                case 5:
+                        mines5 = "🟢"
+                case 6:
+                        mines6 = "🟢"
+                case 7:
+                        mines7 = "🟢"
+                case 8:
+                        mines8 = "🟢"
+        match b:
+                case 9:
+                        mines9 = "🟢"
+                case 10:
+                        mines10 = "🟢"
+                case 11:
+                        mine11 = "🟢"
+                case 12:
+                        mines12 = "🟢"
+                case 13:
+                        mines13 = "🟢"
+                case 14:
+                        mines14 = "🟢"
 
         row1 = mines1 + mines2 + mines3 + mines4 + mines5
         row2 = mines6 + mines7 + mines8 + mines9 + mines10
