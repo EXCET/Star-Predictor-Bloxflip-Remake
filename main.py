@@ -82,17 +82,23 @@ async def towers(ctx, round_id):
    await ctx.send(embed=embed)
 
 @bot.command()
-async def createkey(ctx, key):
+async def createkey(ctx):
+  key = "".join(random.choices(
+            string.ascii_uppercase + string.digits + string.ascii_lowercase,
+            k = 16
+        ))
+
   with open("keys.txt", "a") as f:
    f.write(key + "\n")
+   await ctx.send(f'{key}')
 
 @bot.command()
-async def claim(ctx, key, member : discord.Member):
+async def claim(ctx, key):
  keys = open('keys.txt', 'r')
  read_content = keys.read()
  if f"{key}" in read_content:
     await ctx.send('key valid')
-    member = member or ctx.message.author
+    member = ctx.message.author
     guilds = ctx.guild
     role = discord.utils.get(guilds.roles, name="Buyer")
     await member.add_roles(role)
@@ -101,7 +107,7 @@ async def claim(ctx, key, member : discord.Member):
 
     with open("keys.txt", "w") as f:
      for line in lines:
-        if line.strip("\n") != key:
+        if line.strip("\n") != f'{key}':
             f.write(line)
  else:
     await ctx.send('Invalid')
